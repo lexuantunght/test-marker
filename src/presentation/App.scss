@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Optimistic Display';
+    src: url('/src/common/resources/fonts/OptimisticDisplayLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Optimistic Display';
+    src: url('/src/common/resources/fonts/OptimisticDisplayRegular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Optimistic Display';
+    src: url('/src/common/resources/fonts/OptimisticDisplayBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Optimistic Display', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--surface-ground);
+    color: var(--text-color);
+}
+
+.responsive {
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 576px) {
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}

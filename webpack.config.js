@@ -6,13 +6,16 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
-    entry: { index: './src/index.tsx' },
+    entry: { index: ['./src/index.tsx', './src/index.scss'] },
     output: { path: path.join(__dirname, 'build'), filename: '[name].bundle.js', clean: true },
     mode: process.env.NODE_ENV || 'development',
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             '@common': path.resolve(__dirname, './src/common'),
+            '@utils': path.resolve(__dirname, './src/utils'),
+            '@domain': path.resolve(__dirname, './src/domain'),
+            '@controller': path.resolve(__dirname, './src/controller'),
         },
     },
     devServer: {
@@ -79,10 +82,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html'),
             favicon: path.join(__dirname, 'public', 'favicon.ico'),
+            chunks: 'all',
+            inject: true,
         }),
         new MiniCssExtractPlugin({
             filename: '[name].min.css',
         }),
-        new CircularDependencyPlugin(),
+        new CircularDependencyPlugin({
+            exclude: /a\.js|node_modules/,
+            failOnError: true,
+            allowAsyncCycles: false,
+            cwd: process.cwd(),
+        }),
     ],
 };

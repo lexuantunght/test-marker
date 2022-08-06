@@ -9,6 +9,8 @@
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.3",
         "axios": "^0.27.2",
+        "bson": "^4.6.5",
+        "dexie": "^3.2.2",
         "formik": "^2.2.9",
         "lodash-es": "^4.17.21",
         "moment": "^2.29.3",

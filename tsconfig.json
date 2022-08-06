@@ -20,7 +20,8 @@
             "@common/*": ["src/common/*"],
             "@domain/*": ["src/domain/*"],
             "@utils/*": ["src/utils/*"],
-            "@controller/*": ["src/controller/*"]
+            "@controller/*": ["src/controller/*"],
+            "@data/*": ["src/data/*"]
         }
     },
     "include": ["src"]

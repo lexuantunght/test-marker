@@ -1,4 +1,5 @@
 import { IndexedDBAdapter } from '../adapter/IndexedDBAdapter';
+import { TestStructureEntity } from '../entity/TestStructureEntity';
 
 export class TestStructureQueries {
     private adapter;
@@ -13,5 +14,9 @@ export class TestStructureQueries {
 
     public findStructure(_id: string) {
         return this.adapter.getAsArray('test_structures', { where: '_id', equals: _id });
+    }
+
+    public addStructure(item: TestStructureEntity) {
+        this.adapter.put('test_structures', item);
     }
 }

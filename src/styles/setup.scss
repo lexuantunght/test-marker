@@ -1,0 +1,29 @@
+.setup-container {
+    margin: 1rem;
+}
+.setup-title {
+    font-weight: 500;
+    font-size: 20px;
+}
+.setup-buttons {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: end;
+    .p-input-icon-left {
+        margin-right: 0.75rem;
+    }
+}
+.add-structure-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+.add-structure-buttons {
+    display: flex;
+    justify-content: end;
+    margin-top: 1.5rem;
+    .cancel-add-structure {
+        margin-right: 0.5rem;
+    }
+}

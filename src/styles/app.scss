@@ -1,0 +1,49 @@
+.app-sidebar-container {
+    height: 100vh;
+    width: 4.25rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.app-sidebar-tabs {
+    flex: 1;
+}
+.app-sidebar-tab {
+    width: 4.25rem;
+    height: 4.25rem;
+    color: var(--primary-color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+}
+.app-sidebar-focused {
+    background-color: #00000030;
+}
+.app-sidebar-setting {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    &:focus {
+        background-color: #00000030;
+    }
+    .app-sidebar-setting-focused {
+        display: none;
+    }
+    &:focus .app-sidebar-setting-unfocused {
+        display: none;
+    }
+    &:focus .app-sidebar-setting-focused {
+        display: block;
+    }
+}
+
+.app-container {
+    display: flex;
+    .app-main {
+        flex: 1;
+    }
+}
